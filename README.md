@@ -3,6 +3,8 @@
 ## 📌 Visão Geral
 Este projeto consiste no desenvolvimento de um sistema de aquisição, processamento e visualização de dados climáticos locais. A arquitetura engloba a coleta de dados de temperatura e umidade via hardware (Arduino), a transmissão serial para um ambiente local, e o envio automatizado para a nuvem (Google Sheets) via script Python. A visualização final é realizada através de um dashboard interativo.
 
+   ![Esquema do Circuito](assets/Dashboard_DataTemp.PNG)
+   
 ## 🏗️ Arquitetura do Projeto
 O fluxo de dados foi estruturado nas seguintes etapas:
 
