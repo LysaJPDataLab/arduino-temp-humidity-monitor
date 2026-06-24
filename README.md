@@ -50,3 +50,9 @@ O fluxo de dados foi estruturado nas seguintes etapas:
    ```bash
    cd python
    pip install -r requirements.txt
+
+## 📊 Visualização e Dashboard
+
+Os dados em tempo real e o histórico de monitoramento podem ser visualizados na nossa interface pública.
+
+🌐 **Acesse o site do projeto:** [DataTemp - Monitoramento Climático](https://datatemptucano.my.canva.site/)
