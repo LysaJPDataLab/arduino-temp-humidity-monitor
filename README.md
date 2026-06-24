@@ -1,4 +1,4 @@
-# ⛅Pipeline IoT: Monitoramento de Temperatura e Umidade com Arduino e Google Cloud
+# ⛅ Pipeline IoT: Monitoramento de Temperatura e Umidade com Arduino e Google Cloud
 
 ![Status](https://img.shields.io/badge/Status-Concluído-brightgreen)
 ![Hardware](https://img.shields.io/badge/Hardware-Arduino_Uno-00979D?logo=arduino&logoColor=white)
@@ -11,7 +11,7 @@
 ## 📌 Visão Geral
 Este projeto consiste no desenvolvimento de um sistema de aquisição, processamento e visualização de dados climáticos locais. A arquitetura engloba a coleta de dados de temperatura e umidade via hardware (Arduino), a transmissão serial para um ambiente local, e o envio automatizado para a nuvem (Google Sheets) via script Python. A visualização final é realizada através de um dashboard interativo.
 
-   ![Esquema do Circuito](assets/Dashboard_DataTemp.PNG)
+![Dashboard DataTemp](assets/Dashboard_DataTemp.PNG)
    
 ## 🏗️ Arquitetura do Projeto
 O fluxo de dados foi estruturado nas seguintes etapas:
@@ -50,20 +50,20 @@ O processo de implantação foi dividido em 4 fases para facilitar o entendiment
 #### 🔹 Fase 1: Google Cloud & Estrutura de Dados
 1. **Configuração no GCP:** Acesse o [Google Cloud Console](https://console.cloud.google.com/), crie um novo projeto e ative as APIs do **Google Drive** e **Google Sheets**.
 2. **Conta de Serviço (IAM):** Crie uma *Service Account* (Conta de Serviço), gere uma chave no formato **JSON** e faça o download.
-3. **Segurança Local:** Mova o arquivo baixado para a pasta `python/` e renomeie-o para `credentials.json`.
+3. **Segurança Local:** Mova o arquivo baixado para a pasta `python/` e renomeie-o para `credentials.json`. **Certifique-se de que este arquivo está listado no seu `.gitignore` para não expor suas credenciais.**
 4. **Preparação da Planilha:** Crie uma planilha no Google Sheets com o nome `Dados_DataTemp` e adicione as seguintes colunas na primeira linha: `Data/Hora`, `Temperatura` e `Umidade`.
 5. **Permissão de Acesso:** Abra o arquivo `credentials.json`, copie o e-mail da conta de serviço criado (campo `client_email`) e **compartilhe a sua planilha do Google Sheets com esse e-mail** dando permissão de "Editor".
 
 #### 🔹 Fase 2: Montagem do Hardware & Firmware
 1. **Montagem do Circuito:** Conecte o pino de dados (DATA) do sensor DHT11 ao pino digital 3 do Arduino. Em seguida, alimente o sensor conectando o seu pino VCC ao pino 5V do Arduino, e o pino GND ao GND do Arduino. 
-> **⚠️ Nota:**  A alimentação e a comunicação do Arduino devem ser feitas obrigatoriamente via cabo USB conectado ao computador, pois neste projeto o script Python precisa ler os dados da porta serial em tempo real para enviá-los à nuvem.
+> **⚠️ Nota:** A alimentação e a comunicação do Arduino devem ser feitas obrigatoriamente via cabo USB conectado ao computador, pois neste projeto o script Python precisa ler os dados da porta serial em tempo real para enviá-los à nuvem.
 
-   ![Esquema do Circuito](assets/esquema_monitoramento_de_temperatura.PNG)
+![Esquema do Circuito](assets/esquema_monitoramento_de_temperatura.PNG)
 
 2. **Instalação de Dependências (IDE):** Abra a Arduino IDE, acesse o Gerenciador de Bibliotecas (`Ctrl+Shift+I`) e instale a biblioteca **DHT sensor library** da Adafruit.
 3. **Upload do Código:** Abra o arquivo `arduino/sketch_monitoramento.ino` na Arduino IDE e faça o upload para a placa.
 
-   ![Print da Arduino IDE](assets/arduino_IDE_sketch.PNG)
+![Print da Arduino IDE](assets/arduino_IDE_sketch.PNG)
 
 #### 🔹 Fase 3: Configuração do Ambiente Local (Python)
 1. **Navegação:** Abra o terminal do seu computador e navegue até a pasta do script Python:
