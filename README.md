@@ -84,3 +84,13 @@ Os dados em tempo real e o histórico de monitoramento podem ser visualizados na
    ![Print da Arduino IDE](assets/Site_DataTemp.PNG)
    
 🌐 **Acesse o site do projeto:** [DataTemp - Monitoramento Climático](https://datatemptucano.my.canva.site/)
+
+## 🚀 Sugestão de melhoria
+
+O projeto atual valida com sucesso o fluxo de dados do sensor até a nuvem usando uma conexão serial intermediada por um computador. Como melhorias de arquitetura e escalabilidade, as seguintes evoluções são sugeridas:
+
+* **Conectividade Wi-Fi Nativa (Independência do Host):** * Substituir a comunicação serial USB atual por um módulo de rede sem fio. Isso permitirá que o hardware envie os dados diretamente para o Google Cloud de forma autônoma, sem a necessidade de estar conectado a um computador.
+    * *Opções de implementação:* Integração com o módulo **ESP8266 (ESP-01)** via comandos AT, ou migração do ecossistema para placas com Wi-Fi nativo, como o **ESP32** ou **Arduino Nano 33 IoT**.
+* **Gerenciamento de Energia (Power Management):** * Implementar modos de suspensão profunda (*Deep Sleep*) no hardware para otimizar o consumo de energia entre as leituras dos sensores, viabilizando a alimentação por baterias ou painéis solares.
+* **Armazenamento Local (*Offline Buffering*):** * Adicionar um módulo de cartão SD ou utilizar a memória Flash interna para reter os dados localmente em caso de queda na conexão Wi-Fi, garantindo que nenhuma telemetria seja perdida antes de reestabelecer o envio para a nuvem.
+* **Expansão da Camada de Analytics:** * Conectar o endpoint de recebimento de dados no Google Cloud a uma ferramenta de business intelligence (como o Looker Studio) para criar dashboards em tempo real com histórico e alertas de anomalias.
