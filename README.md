@@ -30,7 +30,6 @@ O fluxo de dados foi estruturado nas seguintes etapas:
 | :--- | :--- | :--- |
 | **Hardware** | Arduino Uno, Módulo Sensor DHT11 | Coleta de dados físicos de temperatura e umidade do ambiente |
 | **Linguagens** | C++ (Arduino IDE), Python | Lógica de controle do microcontrolador (C++) e script de processamento e envio de dados (Python) |
-| **Bibliotecas Python** | `pyserial`, `gspread`, `oauth2client` | Comunicação serial com o Arduino, autenticação e integração com a API do Google |
 | **Cloud** | Google Cloud Platform (IAM/Service Accounts) | Gerenciamento de credenciais e permissões de segurança para acesso aos serviços do Google |
 | **Armazenamento de dados** | Google Sheets | Banco de dados em nuvem para registrar o histórico contínuo das leituras dos sensores |
 | **Visualização de dados** | Looker Studio | Criação de dashboards interativos para monitoramento e análise dos dados armazenados |
