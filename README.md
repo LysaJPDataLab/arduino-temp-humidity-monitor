@@ -57,7 +57,7 @@ O processo de implantação foi dividido em 4 fases para facilitar o entendiment
 #### 🔹 Fase 2: Montagem do Hardware & Firmware
 1. **Montagem do Circuito:** Conecte o pino de dados (DATA) do sensor DHT11 ao pino digital 3 do Arduino. Em seguida, alimente o sensor conectando o seu pino VCC ao pino 5V do Arduino, e o pino GND ao GND do Arduino. 
 > **⚠️ Nota:**  A alimentação e a comunicação do Arduino devem ser feitas obrigatoriamente via cabo USB conectado ao computador, pois neste projeto o script Python precisa ler os dados da porta serial em tempo real para enviá-los à nuvem.
-   
+
    ![Esquema do Circuito](assets/esquema_monitoramento_de_temperatura.PNG)
 
 2. **Instalação de Dependências (IDE):** Abra a Arduino IDE, acesse o Gerenciador de Bibliotecas (`Ctrl+Shift+I`) e instale a biblioteca **DHT sensor library** da Adafruit.
