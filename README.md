@@ -8,7 +8,7 @@
 ![Dashboard](https://img.shields.io/badge/Dashboard-Looker_Studio-4285F4?logo=looker&logoColor=white)
 ![Interface](https://img.shields.io/badge/Interface-Canva-00C4CC?logo=canva&logoColor=white)
 
-## 📌 Visão Geral
+## 📌 Sobre o Projeto
 Este projeto consiste no desenvolvimento de um sistema de aquisição, processamento e visualização de dados climáticos locais. A arquitetura engloba a coleta de dados de temperatura e umidade via hardware (Arduino), a transmissão serial para um ambiente local, e o envio automatizado para a nuvem (Google Sheets) via script Python. A visualização final é realizada através de um dashboard interativo.
 
 ![Dashboard DataTemp](assets/Dashboard_DataTemp.PNG)
