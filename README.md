@@ -45,21 +45,40 @@ O fluxo de dados foi estruturado nas seguintes etapas:
 
 ### Passo a Passo
 
+O processo de implantação foi dividido em 4 fases para facilitar o entendimento e a reprodutibilidade da arquitetura:
+
+#### 🔹 Fase 1: Google Cloud & Estrutura de Dados
+1. **Configuração no GCP:** Acesse o [Google Cloud Console](https://console.cloud.google.com/), crie um novo projeto e ative as APIs do **Google Drive** e **Google Sheets**.
+2. **Conta de Serviço (IAM):** Crie uma *Service Account* (Conta de Serviço), gere uma chave no formato **JSON** e faça o download.
+3. **Segurança Local:** Mova o arquivo baixado para a pasta `python/` e renomeie-o para `credentials.json` (o arquivo já está protegido pelo `.gitignore` deste repositório).
+4. **Preparação da Planilha:** Crie uma planilha no Google Sheets com o nome `Dados_DataTemp` e adicione as seguintes colunas na primeira linha: `Data/Hora`, `Temperatura` e `Umidade`.
+5. **Permissão de Acesso:** Abra o arquivo `credentials.json`, copie o e-mail da conta de serviço criado (campo `client_email`) e **compartilhe a sua planilha do Google Sheets com esse e-mail** dando permissão de "Editor".
+
+#### 🔹 Fase 2: Montagem do Hardware & Firmware
 1. **Montagem do Circuito:** Conecte o pino de dados (DATA) do sensor DHT11 ao pino digital 3 do Arduino. Em seguida, alimente o sensor conectando o seu pino VCC ao pino 5V do Arduino, e o pino GND ao GND do Arduino. 
 *Nota:* A alimentação e a comunicação do Arduino devem ser feitas obrigatoriamente via cabo USB conectado ao computador, pois neste projeto o script Python precisa ler os dados da porta serial em tempo real para enviá-los à nuvem.
    
    ![Esquema do Circuito](assets/esquema_monitoramento_de_temperatura.PNG)
 
-2. **Upload do Código:** Abra o arquivo `arduino/sketch_monitoramento.ino` na Arduino IDE, instale a biblioteca `DHT sensor library` e faça o upload para a placa.
+2. **Instalação de Dependências (IDE):** Abra a Arduino IDE, acesse o Gerenciador de Bibliotecas (`Ctrl+Shift+I`) e instale a biblioteca **DHT sensor library** da Adafruit.
+3. **Upload do Código:** Abra o arquivo `arduino/sketch_monitoramento.ino` na Arduino IDE e faça o upload para a placa.
 
-   ![Esquema do Circuito](assets/arduino_IDE_sketch.PNG)
+   ![Print da Arduino IDE](assets/arduino_IDE_sketch.PNG)
 
-3. **Configuração do Ambiente Python:**
+#### 🔹 Fase 3: Configuração do Ambiente Local (Python)
+1. **Navegação:** Abra o terminal do seu computador e navegue até a pasta do script Python:
    ```bash
    cd python
    pip install -r requirements.txt
 
-## 📊 Visualização e Dashboard
+### 🔹 Fase 4: Execução e Validação do Pipeline
+1. **Conexão Física:** Garanta que a placa Arduino continue conectada ao computador via cabo USB.
+2. **Verificação da Porta:** Certifique-se de que a porta serial especificada no script `upload_data.py` (ex: `COM4` no Windows) corresponde à porta onde o seu Arduino está conectado.
+3. **Inicialização do Script:** Execute o script para iniciar a captura e a ingestão automatizada para a nuvem:
+   ```bash
+   python upload_data.py
+
+## 📊 Visualização de dados
 
 Os dados em tempo real e o histórico de monitoramento podem ser visualizados na nossa interface pública.
 
