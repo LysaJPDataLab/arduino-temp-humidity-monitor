@@ -41,6 +41,9 @@ O fluxo de dados foi estruturado nas seguintes etapas:
    ![Esquema do Circuito](assets/esquema_monitoramento_de_temperatura.PNG)
 
 2. **Upload do Código:** Abra o arquivo `arduino/sketch_monitoramento.ino` na Arduino IDE, instale a biblioteca `DHT sensor library` e faça o upload para a placa.
+
+   ![Esquema do Circuito](assets/arduino_IDE_sketch.PNG)
+
 3. **Configuração do Ambiente Python:**
    ```bash
    cd python
