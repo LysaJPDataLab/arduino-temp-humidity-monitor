@@ -82,4 +82,6 @@ O processo de implantação foi dividido em 4 fases para facilitar o entendiment
 
 Os dados em tempo real e o histórico de monitoramento podem ser visualizados na nossa interface pública.
 
+   ![Print da Arduino IDE](assets/Site_DataTemp.PNG)
+   
 🌐 **Acesse o site do projeto:** [DataTemp - Monitoramento Climático](https://datatemptucano.my.canva.site/)
