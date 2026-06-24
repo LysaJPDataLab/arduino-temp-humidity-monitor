@@ -50,7 +50,7 @@ O processo de implantação foi dividido em 4 fases para facilitar o entendiment
 #### 🔹 Fase 1: Google Cloud & Estrutura de Dados
 1. **Configuração no GCP:** Acesse o [Google Cloud Console](https://console.cloud.google.com/), crie um novo projeto e ative as APIs do **Google Drive** e **Google Sheets**.
 2. **Conta de Serviço (IAM):** Crie uma *Service Account* (Conta de Serviço), gere uma chave no formato **JSON** e faça o download.
-3. **Segurança Local:** Mova o arquivo baixado para a pasta `python/` e renomeie-o para `credentials.json` (o arquivo já está protegido pelo `.gitignore` deste repositório).
+3. **Segurança Local:** Mova o arquivo baixado para a pasta `python/` e renomeie-o para `credentials.json`.
 4. **Preparação da Planilha:** Crie uma planilha no Google Sheets com o nome `Dados_DataTemp` e adicione as seguintes colunas na primeira linha: `Data/Hora`, `Temperatura` e `Umidade`.
 5. **Permissão de Acesso:** Abra o arquivo `credentials.json`, copie o e-mail da conta de serviço criado (campo `client_email`) e **compartilhe a sua planilha do Google Sheets com esse e-mail** dando permissão de "Editor".
 
