@@ -35,7 +35,7 @@ O fluxo de dados foi estruturado nas seguintes etapas:
 | **Visualização de dados** | Looker Studio | Criação de dashboards interativos para monitoramento e análise dos dados armazenados |
 | **Site** | Canva | Design e construção da página de apresentação ou interface visual do projeto |
 
-## 🚀 Como Executar o Projeto
+## ⚙️ Como executar este projeto
 
 ### Pré-requisitos
 * **[Arduino IDE](https://www.arduino.cc/en/software)** instalada e placa Arduino Uno configurada.
