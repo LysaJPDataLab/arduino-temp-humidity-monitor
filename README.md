@@ -1,5 +1,13 @@
 # ⛅Pipeline IoT: Monitoramento de Temperatura e Umidade com Arduino e Google Cloud
 
+![Status](https://img.shields.io/badge/Status-Concluído-brightgreen)
+![Hardware](https://img.shields.io/badge/Hardware-Arduino_Uno-00979D?logo=arduino&logoColor=white)
+![Linguagem](https://img.shields.io/badge/Script-Python-3776AB?logo=python&logoColor=white)
+![Cloud](https://img.shields.io/badge/Cloud-Google_Cloud-4285F4?logo=googlecloud&logoColor=white)
+![Database](https://img.shields.io/badge/Database-Google_Sheets-34A853?logo=googlesheets&logoColor=white)
+![Dashboard](https://img.shields.io/badge/Dashboard-Looker_Studio-4285F4?logo=looker&logoColor=white)
+![Interface](https://img.shields.io/badge/Interface-Canva-00C4CC?logo=canva&logoColor=white)
+
 ## 📌 Visão Geral
 Este projeto consiste no desenvolvimento de um sistema de aquisição, processamento e visualização de dados climáticos locais. A arquitetura engloba a coleta de dados de temperatura e umidade via hardware (Arduino), a transmissão serial para um ambiente local, e o envio automatizado para a nuvem (Google Sheets) via script Python. A visualização final é realizada através de um dashboard interativo.
 
